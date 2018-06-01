@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class DiagonalDifference {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		int [][] arr = new int[n][n];
+		
+		for(int i=0; i<n; i++){
+			for(int j=0; j<n; j++){
+				arr[i][j] = scanner.nextInt();
+			}
+		}
+		
+		int result = diagonaldif(arr, n);
+		
+		System.out.println(result);
+
+	}
+	
+	static int diagonaldif(int arr[][], int n){
+		int i, fisrtDiagonal=0, secondDiagonal=0;
+		for(i=0;i<n;i++){
+			fisrtDiagonal = fisrtDiagonal + arr[i][i];
+			secondDiagonal = secondDiagonal + arr[i][n-i-1];
+		}
+		
+		if(fisrtDiagonal > secondDiagonal)
+			return fisrtDiagonal-secondDiagonal;
+		else
+			return secondDiagonal-fisrtDiagonal;
+	}
+
+}
