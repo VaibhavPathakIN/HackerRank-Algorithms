@@ -1,0 +1,46 @@
+
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class BirthdayCakeCandle {
+
+    /*
+     * Complete the birthdayCakeCandles function below.
+     */
+    static int birthdayCakeCandles(int n, int[] ar) {
+        /*
+         * Write your code here.
+         */
+    	int i =n-1;
+    	for(;i>=0;i--){
+    		if(ar[i]!=0)
+    			break;
+    	}
+    	return ar[i];
+
+    }
+    
+
+    private static final Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+       
+    	
+    	int n = scan.nextInt(), T=n,i=0,x=0;
+        int[] ar = new int[10000000];
+
+        for(i=0;i<n;i++){
+        	 x = scan.nextInt();
+        	 ar[x]++;        	
+        }
+       
+        int result = birthdayCakeCandles(10000000, ar);
+        System.out.println(result);
+        
+
+
+      }
+}
